@@ -13,5 +13,6 @@ import Catalog from "./components/Catalog.vue";
     max-width: 1488px;
     width: 100%;
     margin: auto;
+    padding: 45px 8px;
   }
 </style>

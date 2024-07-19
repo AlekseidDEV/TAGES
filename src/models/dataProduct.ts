@@ -1,7 +1,7 @@
 export interface DataProduct {
     id: string,
     name: string,
-    code: string,
+    code: string | null,
     price: Price
     image: ImageUrl
     material: number
