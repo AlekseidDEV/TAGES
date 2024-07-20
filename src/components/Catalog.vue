@@ -11,9 +11,9 @@ let arrCart: Ref<string[]> = ref([])
 let arrWish: Ref<string[]> = ref([])
 
 const updateCart = (id: string, params: boolean) => {
-  if(params){
+  if (params) {
     arrCart.value.push(id)
-  }else {
+  } else {
     arrCart.value = arrCart.value.filter((elem) => elem !== id)
   }
 
@@ -21,9 +21,9 @@ const updateCart = (id: string, params: boolean) => {
 }
 
 const updateWishList = (id: string, params: boolean) => {
-  if(params){
+  if (params) {
     arrWish.value.push(id)
-  }else {
+  } else {
     arrWish.value = arrWish.value.filter((elem) => elem !== id)
   }
 
@@ -93,7 +93,7 @@ onMounted(() => {
   }
 
   @media (max-width: 500px) {
-    &__link{
+    &__link {
       font-size: 14px;
     }
   }

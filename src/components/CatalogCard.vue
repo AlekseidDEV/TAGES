@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import {computed, onMounted, ref} from "vue";
-import IconsHeart from "./icons/IconsHeart.vue";
+import IconHeart from "./icons/IconHeart.vue";
 import {DataProduct} from "../models/dataProduct.ts";
 
 const emits = defineEmits<{
   (e: 'changeCart', id: string, params: boolean): void
   (e: 'changeWishList', id: string, params: boolean): void
 }>()
+
 const props = defineProps<{
   product: DataProduct
 }>()
@@ -17,6 +18,7 @@ const isWishList = ref(false)
 const currentPrice = computed(() => {
   return Math.floor(props.product.price.current_price)
 })
+
 const oldPrice = computed(() => {
   return props.product.price.old_price ? Math.floor(props.product.price.old_price) : ''
 })
@@ -47,13 +49,12 @@ const storageCheck = () => {
 onMounted(() => {
   storageCheck()
 })
-
 </script>
 
 <template>
   <div class="card-product">
     <div class="card-product__cont">
-      <img src="/img/img1.png" alt="product" class="card-product__img">
+      <img :src="product.image.url" alt="product" class="card-product__img">
       <p class="card-product__code">{{ product.code }}</p>
       <div class="card-product__wrapper">
         <div class="card-product__info-card">
@@ -89,7 +90,7 @@ onMounted(() => {
               @click.prevent="changeWishList"
               class="card-product__btn"
           >
-            <IconsHeart
+            <IconHeart
                 :color="isWishList ? '#FF0000' : '#000000'"
             />
           </a>
@@ -114,7 +115,7 @@ onMounted(() => {
     max-width: 100%;
   }
 
-  &product__img {
+  &__img {
     margin: auto;
   }
 
