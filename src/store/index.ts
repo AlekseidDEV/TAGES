@@ -6,7 +6,8 @@ import {SelectOptions} from "../models/selectOptions.ts";
 
 export const useProductStore = defineStore('productStore', () => {
     // state
-    const baseUrl: string = process.env.NODE_ENV === 'production' ? 'https://main--tages-web-site.netlify.app/db/' : '/db/'
+    const baseUrl: string = process.env.NODE_ENV === 'production' ?
+        'https://main--tages-web-site.netlify.app/db/' : '/db/'
 
     let arrProduct: Ref<DataProduct[]> = ref([])
     let arrOptions: Ref<SelectOptions[]> = ref([])
