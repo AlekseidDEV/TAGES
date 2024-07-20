@@ -1,10 +1,10 @@
 # Frontend Task - Tages
-<hr>
 
-This application implements a catalog with product cards. Products can be sorted and filtered by certain parameters
+This application implements a catalog with product cards. Products can be sorted and filtered by certain parameters.
+
+The application has been successfully deployed and is available at: https://main--tages-web-site.netlify.app/
 
 ## Technologies Used
-<hr>
 
 <ul>
 <li>Vue 3</li>
@@ -15,7 +15,7 @@ This application implements a catalog with product cards. Products can be sorted
 </ul>
 
 ## Getting Started
-<hr>
+
 
 To get started with the project follow these steps:
 
@@ -30,4 +30,11 @@ cd TAGES
 3. install dependencies:
 ```
 npm install
+```
+4. the project has a .env variable for the production build. Сonfigure it if necessary.
+
+
+5. Run the development server:
+```
+npm run dev
 ```
