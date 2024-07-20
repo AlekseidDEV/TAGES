@@ -6,6 +6,8 @@ import {SelectOptions} from "../models/selectOptions.ts";
 
 export const useProductStore = defineStore('productStore', () => {
     // state
+    const baseUrl: string = process.env.NODE_ENV === 'production' ? 'https://main--tages-web-site.netlify.app/db/' : '/db/'
+
     let arrProduct: Ref<DataProduct[]> = ref([])
     let arrOptions: Ref<SelectOptions[]> = ref([])
     let isSort = ref(false)
@@ -13,12 +15,12 @@ export const useProductStore = defineStore('productStore', () => {
 
     // actions
     const getProductDb = () => {
-        axios.get('/db/items.json').then((res) => {
+        axios.get(baseUrl + 'items.json').then((res) => {
             arrProduct.value = res.data
         })
     }
     const getSelectOptionDb = () => {
-        axios.get('/db/materials.json').then((res) => {
+        axios.get(baseUrl + 'materials.json').then((res) => {
             arrOptions.value = res.data
         })
     }
@@ -37,7 +39,7 @@ export const useProductStore = defineStore('productStore', () => {
     }
 
     const filteredProduct = (id: number) => {
-        axios.get('/db/items.json').then((res) => {
+        axios.get(baseUrl + 'items.json').then((res) => {
             arrProduct.value = res.data.filter((elem: DataProduct) => elem.material === id)
 
             if (isSort.value) sortProduct(sortId.value)
