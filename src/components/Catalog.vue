@@ -32,11 +32,11 @@ const updateWishList = (id: string, params: boolean) => {
 
 
 onMounted(() => {
-  const dataCart = localStorage.getItem('cart') || ''
-  const dataWishList = localStorage.getItem('wishList') || ''
+  const dataCart = localStorage.getItem('cart')
+  const dataWishList = localStorage.getItem('wishList')
 
-  arrCart.value = JSON.parse(dataCart)
-  arrWish.value = JSON.parse(dataWishList)
+  arrCart.value = dataCart ? JSON.parse(dataCart) : []
+  arrWish.value = dataWishList ? JSON.parse(dataWishList) : []
 
   store.getProductDb()
 })
