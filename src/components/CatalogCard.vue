@@ -53,7 +53,7 @@ onMounted(() => {
 
 <template>
   <div class="card-product">
-    <div class="card-product__cont">
+    <div class="card-product__content">
       <img :src="product.image.url" alt="product" class="card-product__img">
       <p class="card-product__code">{{ product.code }}</p>
       <div class="card-product__wrapper">
@@ -119,7 +119,7 @@ onMounted(() => {
     margin: auto;
   }
 
-  &__cont {
+  &__content {
     display: flex;
     align-items: start;
     flex-direction: column;
